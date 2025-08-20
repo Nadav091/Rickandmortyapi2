@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rick and Morty — Galeria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Rick and Morty</h1>
+    <p class="subtitle">Explore os personagens com imagens e detalhes</p>
+  </header>
+
+  <section class="toolbar">
+    <div class="controls">
+      <label for="pageInput" class="sr-only">Página</label>
+      <input id="pageInput" type="number" min="1" step="1" placeholder="Ir para página..." />
+      <button id="searchBtn" class="btn primary">Buscar</button>
+      <button id="prevBtn" class="btn">◀ Anterior</button>
+      <button id="nextBtn" class="btn">Próxima ▶</button>
+    </div>
+    <div id="meta" class="meta">Página <span id="pageNow">1</span> de <span id="pageTotal">?</span> • <span id="count">0</span> personagens</div>
+  </section>
+
+  <main>
+    <div id="results" class="grid"></div>
+  </main>
+
+  <footer class="site-footer">
+    <small>Dados: <a href="https://rickandmortyapi.com" target="_blank" rel="noreferrer">The Rick and Morty API</a></small>
+  </footer>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="img-wrap">
+        <img alt="" loading="lazy" />
+        <span class="status-badge"></span>
+      </div>
+      <div class="card-body">
+        <h3 class="name"></h3>
+        <p class="muted species"></p>
+        <p class="muted origin"></p>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
